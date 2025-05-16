@@ -1,3 +1,3 @@
 # Hermes-3 dev notes
 
-[BOUT-Spack for development](./BOUT-spack.md)
+[BOUT-Spack for development](./bout-spack.md)
