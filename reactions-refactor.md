@@ -2,7 +2,7 @@
 
 ## Short term
 
-- [x] Simplify Amjuel reaction classes
+- [x] Simplify Amjuel reaction classes (Hydrogenic isotopes and He; iz, rec, cx)
   - [x] Rates from json files rather than static vars; similar to OpenADAS*
   - [x] Duplicated code from H_iz, H_rec, He_iz, He_rec $\to$ to AmjuelReaction
 - [x] OpenADASReaction, AmjuelReaction inherit from Reaction
