@@ -5,33 +5,30 @@
 - ReactionTest.write data
 
 ## ReactionTest fixture
-- compare_sources()
-  - [ ] read test input data
-    - [ ] Amjuel:
-      - [ ] electron["density"], electron["temperature"],from_ion["density"] SET with gradients (determines rate)
-      - [ ] from_ion["charge"], to_ion["charge"] SET to the same thing (required for charge cons check, both ignored otherwise)
-      - [ ] from_ion["temperature"] SET (affects from_ion["energy_source"], to_ion["energy_source"])
-      - [ ] to_ion["velocity"] SET (affects to_ion["energy_source"])
-      - [ ] electron["velocity"], electron["AA"] SET to constants (needed for electron["energy_source"])
-      - [ ] from_ion["AA"], from_ion["velocity"] SET (affects from_ion["momentum_source"], to_ion["momentum_source"], to_ion["energy_source"])
-      - [ ] to_ion["AA"] SET to from_ion["AA"] (required for mass cons check)
-    - Tests
-      - Values of
-        - [ ] from_ion["density_source"]
-        - [ ] to_ion["density_source"]
-        - [ ] from_ion["momentum_source"]
-        - [ ] to_ion["momentum_source"]
-        - [ ] electron["density_source"]
-        - [ ] from_ion["energy_source"]
-        - [ ] to_ion["energy_source"]
-        - [ ] electron["energy_source"]
-- [ ] read test data for the reaction (including species; nT_test_matrix)
 - [x] component as member var, construct via init list using static Options obj
-- foreach (n, T) in nT_test_matrix: 
-  - foreach sp
-    - foreach source_type
-    - ASSERT_TRUE(IsFieldEqual(get<Field3D>(state["species"][sp][source_type]), val_from_data, "RGN_NOBNDRY"));
-
+- All tests call compare_sources():
+  - [ ] Read test ref data (input state,reference_output)
+  - [ ] Verify that mesh size is the same
+  - [ ] call transform()
+  - [ ] Compare output fields to reference output with ASSERT_TRUE(IsFieldEqual(get<Field3D>(state["species"][sp][source_type]), ref["species"][sp][source_type], "RGN_NOBNDRY"));
+    - [ ] from_ion["density_source"]
+    - [ ] to_ion["density_source"]
+    - [ ] from_ion["momentum_source"]
+    - [ ] to_ion["momentum_source"]
+    - [ ] electron["density_source"]
+    - [ ] from_ion["energy_source"]
+    - [ ] to_ion["energy_source"]
+    - [ ] electron["energy_source"]
+- [ ] generate_data()
+  - Mesh size
+  -  [ ] Amjuel:
+    - [ ] electron["density"], electron["temperature"],from_ion["density"] SET with gradients (determines rate)
+    - [ ] from_ion["charge"], to_ion["charge"] SET to the same thing (required for charge cons check, both ignored otherwise)
+    - [ ] from_ion["temperature"] SET (affects from_ion["energy_source"], to_ion["energy_source"])
+    - [ ] to_ion["velocity"] SET (affects to_ion["energy_source"])
+    - [ ] electron["velocity"], electron["AA"] SET to constants (needed for electron["energy_source"])
+    - [ ] from_ion["AA"], from_ion["velocity"] SET (affects from_ion["momentum_source"], to_ion["momentum_source"], to_ion["energy_source"])
+    - [ ] to_ion["AA"] SET to from_ion["AA"] (required for mass cons check)
 
 
 ## Existing tests for reactions
