@@ -7,6 +7,16 @@
   - [x] Move duplicated code up from H_iz, H_rec, He_iz, He_rec $\to$ to AmjuelReaction
 - [x] OpenADASReaction, AmjuelReaction inherit from common Reaction class
 - [ ] Regression tests for hydrogenic iz, rec, cx rates and impurity iz, rec, cx rates
+  - Generate reference data
+  	- Set up a fixed state (existing 3x5x7 test mesh)
+  	- Gradients for reactant densities
+  	- Call transform()
+  	- Write output state to .nc
+  - Test
+    - Reads ref data
+    - Sets up init test state
+    - Calls transform() on test state
+    - Compares source terms in ref state, test state   
 
 
 ## Longer term
