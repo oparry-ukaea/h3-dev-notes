@@ -8,16 +8,15 @@
 - [x] OpenADASReaction, AmjuelReaction inherit from common Reaction class
 - [ ] Regression tests for hydrogenic iz, rec, cx rates and impurity iz, rec, cx rates
   - Generate reference data
-  	- Set up a fixed state (existing 3x5x7 test mesh)
-  	- Gradients for reactant densities
-  	- Call transform()
-  	- Write output state to .nc
+  	- [x] Set up a fixed state (existing 3x5x7 test mesh)
+  	- [x] Gradients for reactant densities
+  	- [x] Call transform()
+  	- [x] Write output state to .nc
   - Test
-    - Reads ref data
-    - Sets up init test state
-    - Calls transform() on test state
-    - Compares source terms in ref state, test state   
-
+    - [x] Reads ref data
+    - [x] Sets up init test state
+    - [x] Calls transform() on test state
+    - [x] Compares source terms in ref state, test state
 
 ## Longer term
 
